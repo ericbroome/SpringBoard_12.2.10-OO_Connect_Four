@@ -1,27 +1,94 @@
-/* game board table */
-
-#board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+/* 0: Psuedo selector to create some reusable styles */
+:root {
+  --background: ivory;
+  --font-size: 10px;  /* Let rem and em be based on 10 rather than the default (16) */
 }
 
-/* pieces are div within game table cells: draw as colored circles */
+/* 1: Everything gets some default settings which must be overridden explicitly*/
+* {
+  font-size: var(--font-size);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+/* 2: pieces are div within game table cells: draw as colored circles */
 .piece {
-  margin: 5px;
+  margin: 0.5rem;
   width: 80%;
   height: 80%;
   border-radius: 50%;
 }
 
-.piece.p1 {
+/* 3: Player 1 piece color */
+.piece .p1 {
   background-color: red;
 }
 
-.piece.p2 {
+/* 4: Player 2 piece color */
+.piece .p2 {
   background-color: blue;
 }
+
+html, body {
+  font-size: var(--font-size);  /* Ensure that rem, em is consistent */
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+nav {
+  font-size: 1.6rem;
+  width: 100%;
+  margin: auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  display: grid;
+  grid-template-columns: 25rem 25rem 25rem;  
+  grid-template-rows: 6.4rem;
+  align-items: center;
+  justify-items: space-evenly;
+}
+
+nav div {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+nav div label {
+  font-size: 1.8rem;
+}
+
+nav div button {
+  font-size: 1.8rem;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+#game {
+  width: 80rem;
+  min-width: 80rem;
+  height: 60rem;
+  min-height: 60rem;
+  display: grid;
+  grid-template-rows: 1;
+  align-items: center;
+  justify-items: center;
+}
+
+#board td {
+  width: 5rem;
+  height: 5rem;
+  border: solid 1px #666;
+}
+
+
 
 /* column-top is table row of clickable areas for each column */
 
