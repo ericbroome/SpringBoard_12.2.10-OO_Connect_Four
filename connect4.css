@@ -46,7 +46,7 @@ nav {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   display: grid;
-  grid-template-columns: 25rem 25rem 25rem;  
+  grid-template-columns: auto 25rem 25rem 25rem;  
   grid-template-rows: 6.4rem;
   align-items: center;
   justify-items: space-evenly;
